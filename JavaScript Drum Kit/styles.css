@@ -1,0 +1,75 @@
+body {
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.keys {
+    display: flex;
+    height: 99%;
+    width: 100%;
+    position: absolute;
+}
+
+.black-keys {
+    display: flex;
+    height: 80%;
+    width: 100%;
+    padding-left: 3.5%;
+    position: absolute;
+}
+
+.key {
+    border: 0.15em solid rgba(0, 0, 0, 0.781);
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 0.3em;
+    text-align: center;
+    transition: all .09s;
+}
+
+.white {
+    background-color: white;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.9);
+    height: inherit;
+    width: 10%;
+}
+
+.black {
+    background-color: black;
+    box-shadow: 0px 15px 5px 0px rgba(0,0,0,0.9);
+    height: 80%;
+    width: 6%;
+    margin-left: 3.5%;
+    color: white;
+}
+
+#separated {
+    margin-left: 14%;
+}
+
+kbd {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.white kbd {
+    position: absolute;
+    bottom: 20%;
+}
+
+.black kbd {
+    position: absolute;
+    bottom: 30%;
+}
+
+.white.playing {
+    box-shadow:  0px 0px 5px 0px rgba(0,0,0,0.9) !important;
+}
+
+.black.playing {
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.9) !important;
+}

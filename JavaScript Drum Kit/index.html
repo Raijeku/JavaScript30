@@ -1,0 +1,121 @@
+<html>
+    <link rel="stylesheet" href="styles.css">
+    <head>
+        <title>JavaScript Drum Kit</title>
+    </head>
+    <body>
+        <div class="container">
+        <!--<div class="keys">
+            <div class="key white">
+                <kbd>A</kbd>
+            </div>
+            <div class="key black" id="black-key-1">
+                <kbd>S</kbd>
+            </div>
+            <div class="key white">
+                <kbd>D</kbd>
+            </div>
+            <div class="key black" id="black-key-2">
+                <kbd>F</kbd>
+            </div>
+            <div class="key white">
+                <kbd>G</kbd>
+            </div>
+            <div class="key black" id="black-key-3">
+                <kbd>H</kbd>
+            </div>
+            <div class="key white">
+                <kbd>J</kbd>
+            </div>
+            <div class="key black" id="black-key-4">
+                <kbd>K</kbd>
+            </div>
+            <div class="key white">
+                <kbd>L</kbd>
+            </div>
+            <div class="key black" id="black-key-5">
+                <kbd>K</kbd>
+            </div>
+            <div class="key white">
+                <kbd>L</kbd>
+            </div>
+        </div>-->
+            <div class="keys">
+                <div data-key="65" class="key white">
+                    <kbd>A</kbd>
+                </div>
+                <div data-key="83" class="key white">
+                    <kbd>S</kbd>
+                </div>
+                <div data-key="68" class="key white">
+                    <kbd>D</kbd>
+                </div>
+                <div data-key="70" class="key white">
+                    <kbd>F</kbd>
+                </div>
+                <div data-key="71" class="key white">
+                    <kbd>G</kbd>
+                </div>
+                <div data-key="72" class="key white">
+                    <kbd>H</kbd>
+                </div>
+                <div data-key="74" class="key white">
+                    <kbd>J</kbd>
+                </div>
+                <div data-key="75" class="key white">
+                    <kbd>K</kbd>
+                </div>
+                <div data-key="76" class="key white">
+                    <kbd>L</kbd>
+                </div>
+                <div data-key="192" class="key white">
+                    <kbd>Ñ</kbd>
+                </div>
+            </div>
+            <div class="black-keys">
+                <div data-key="87" class="key black">
+                    <kbd>W</kbd>
+                </div>
+                <div data-key="69" class="key black">
+                    <kbd>E</kbd>
+                </div>
+                <div data-key="82" class="key black" id="separated">
+                    <kbd>R</kbd>
+                </div>
+                <div data-key="84" class="key black">
+                    <kbd>T</kbd>
+                </div>
+                <div data-key="89" class="key black">
+                    <kbd>Y</kbd>
+                </div>
+                <div data-key="85" class="key black" id="separated">
+                    <kbd>U</kbd>
+                </div>
+                <div data-key="73" class="key black">
+                    <kbd>I</kbd>
+                </div>
+            </div>
+        </div>
+
+        <audio data-key="65" src="sounds/0m-021-A0.wav"></audio>
+        <audio data-key="83" src="sounds/0m-036-C2.wav"></audio>
+        <audio data-key="68" src="sounds/0m-045-A2.wav"></audio>
+        <audio data-key="70" src="sounds/0m-048-C3.wav"></audio>
+        <audio data-key="71" src="sounds/0m-060-C4.wav"></audio>
+        <audio data-key="72" src="sounds/0m-069-A4.wav"></audio>
+        <audio data-key="74" src="sounds/0m-081-A5.wav"></audio>
+        <audio data-key="75" src="sounds/0m-084-C6.wav"></audio>
+        <audio data-key="76" src="sounds/0m-093-A6.wav"></audio>
+        <audio data-key="192" src="sounds/0m-108-C8.wav"></audio>
+
+        <audio data-key="87" src="sounds/0m-027-D-1.wav"></audio>
+        <audio data-key="69" src="sounds/0m-042-F-2.wav"></audio>
+        <audio data-key="82" src="sounds/0m-051-D-3.wav"></audio>
+        <audio data-key="84" src="sounds/0m-066-F-4.wav"></audio>
+        <audio data-key="89" src="sounds/0m-075-D-5.wav"></audio>
+        <audio data-key="85" src="sounds/0m-090-F-6.wav"></audio>
+        <audio data-key="73" src="sounds/0m-099-D-7.wav"></audio>
+
+        <script src="script.js"></script>
+    </body>
+</html>

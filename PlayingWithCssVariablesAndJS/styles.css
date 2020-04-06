@@ -1,0 +1,70 @@
+:root {
+    --base: #000000;
+    --spacing: 10px;
+    --blur: 10px;
+    --size: 90%;
+}
+
+body {
+    text-align: center;
+    background-color: black;
+    padding: 50px 50px 50px 50px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    margin: 50px;
+    padding: var(--spacing);
+    background-color: var(--base);
+    filter: blur(var(--blur));
+    width: var(--size);
+    height: auto;
+}
+
+.slider 
+{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    opacity: 0.7;
+    background: white;
+    height: 0.2em;
+}
+
+.slider::-webkit-slider-thumb 
+{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-box-shadow: 
+    inset 0px 0px 5px 3px rgba(190,64,39,1),
+    0px 0px 10px 10px rgba(190,64,39,1);
+    -moz-box-shadow: 
+    inset 0px 0px 5px 3px rgba(190,64,39,1),
+    0px 0px 10px 10px rgba(190,64,39,1);
+    box-shadow: 
+    inset 0px 0px 5px 3px rgba(190,64,39,1),
+    0px 0px 10px 10px rgba(190,64,39,1); 
+}
+
+.slider::-moz-range-thumb 
+{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-box-shadow: 
+    inset 0px 0px 5px 3px rgba(190,64,39,1),
+    0px 0px 10px 10px rgba(190,64,39,1);
+    -moz-box-shadow: 
+    inset 0px 0px 5px 3px rgba(190,64,39,1),
+    0px 0px 10px 10px rgba(190,64,39,1);
+    box-shadow: 
+    inset 0px 0px 5px 3px rgba(190,64,39,1),
+    0px 0px 10px 10px rgba(190,64,39,1); 
+}

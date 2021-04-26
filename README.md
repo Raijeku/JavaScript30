@@ -3,3 +3,5 @@ This repository stores plain JS solutions for each of the 30 days of the Javascr
 
 ## Project links
 - [CSS+JSClock](./CSS+JSClock)
+- [JavaScriptDrumKit](./JavaScriptDrumKit)
+- [PlayingWithCssVariablesAndJS](./PlayingWithCssVariablesAndJS)

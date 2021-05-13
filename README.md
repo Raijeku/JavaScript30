@@ -6,3 +6,4 @@ This repository stores plain JS solutions for each of the 30 days of the Javascr
 - [CSS + JS Clock](./CSS+JSClock)
 - [Playing with CSS Variables and JS](./PlayingWithCssVariablesAndJS)
 - [Array Cardio Day 1](./ArrayCardioDay1)
+- [Flex Panels Image Gallery](./FlexPanelsImageGallery)

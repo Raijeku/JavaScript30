@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="Pokemon name">
+    <ul class="suggestions">
+      <li>Filter for a pokemon</li>
+    </ul>
+  </form>
+
+  <div class="entry" style="display: none;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 class="entry-name"></h1>
+        <div style="flex: 1; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+            <img class="type1">
+            <img class="type2">
+        </div>  
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column;">
+        <img class="entry-image"/>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1>Stats</h1>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: first baseline;">
+            <p id="hp">HP: </p>
+            <p id="attack">Attack: </p>
+            <p id="defense">Defense: </p>
+            <p id="sp-attack">Sp. Attack: </p>
+            <p id="sp-defense">Sp. Defense: </p>
+            <p id="speed">Speed: </p>
+        </div>  
+    </div>
+  </div>
+<script>
+const endpoint = 'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json';
+
+const pokedex = [];
+
+fetch(endpoint)
+    .then(blob => blob.json())
+    .then(data => pokedex.push(...data))
+
+function findMatches(wordToMatch, pokedex){
+    const regex = RegExp(wordToMatch, 'gi');
+    return pokedex.filter(pokemon => {
+        return pokemon.name.english.match(regex);
+    })
+}
+
+function displayMatches(){
+    const matchArray = findMatches(this.value, pokedex);
+    const html = matchArray.map(pokemon => {
+        const regex = RegExp(this.value,'gi');
+        const pokemonName = pokemon.name.english.replace(regex,`<span class="hl">${this.value}</span>`);
+        return `
+        <li>
+            <span class="name">${pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}</span>
+            <span class="population">${pokemon.id}</span>
+        </li>
+        `;
+    }).join('');
+    suggestions.innerHTML = html;
+}
+
+function getPokemon(id) {
+    return pokedex.filter(pokemon => pokemon.id == id);
+}
+
+function selectMatch(e){
+    entry.style.display = 'flex';
+    pokemonName = e.target.querySelector('.name').innerHTML.replace(`<span class="hl">`,'').replace(`</span>`,'');
+    pokemonId = e.target.querySelector('.population').innerHTML;
+    name.innerHTML = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+    image.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${("000" + pokemonId.toString()).slice (-3)}.png`;
+    pokemon = getPokemon(pokemonId);
+    console.log(pokemon);
+    type1.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${pokemon[0].type[0].toLowerCase()}.png`;
+    if(pokemon[0].type.length==2){
+        type2.src = `https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/${pokemon[0].type[1].toLowerCase()}.png`;
+    } else {
+        type2.src = "";
+    }
+    hp.innerHTML = hp.innerHTML.replace(': ', ': ' + pokemon[0].base["HP"].toString());
+    attack.innerHTML = attack.innerHTML.replace(': ', ': ' + pokemon[0].base["Attack"].toString());
+    defense.innerHTML = defense.innerHTML.replace(': ', ': ' + pokemon[0].base["Defense"].toString());
+    spAttack.innerHTML = spAttack.innerHTML.replace(': ', ': ' + pokemon[0].base["Sp. Attack"].toString());
+    spDefense.innerHTML = spDefense.innerHTML.replace(': ', ': ' + pokemon[0].base["Sp. Defense"].toString());
+    speed.innerHTML = speed.innerHTML.replace(': ', ': ' + pokemon[0].base["Speed"].toString());
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+const name = document.querySelector('.entry-name');
+const image = document.querySelector('.entry-image');
+const entry = document.querySelector('.entry');
+const type1 = document.querySelector('.type1');
+const type2 = document.querySelector('.type2');
+const hp = document.querySelector('#hp');
+const attack = document.querySelector('#attack');
+const defense = document.querySelector('#defense');
+const spAttack = document.querySelector('#sp-attack');
+const spDefense = document.querySelector('#sp-defense');
+const speed = document.querySelector('#speed');
+
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+suggestions.addEventListener('click', selectMatch);
+
+</script>
+</body>
+</html>

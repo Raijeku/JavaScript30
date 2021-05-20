@@ -23,7 +23,10 @@
         </div>  
     </div>
     <div style="flex: 1; display: flex; flex-direction: column;">
-        <img class="entry-image"/>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h1 class="entry-id"></h1>
+            <img class="entry-image"/>
+        </div>  
     </div>
     <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <h1>Stats</h1>
@@ -77,6 +80,7 @@ function selectMatch(e){
     pokemonName = e.target.querySelector('.name').innerHTML.replace(`<span class="hl">`,'').replace(`</span>`,'');
     pokemonId = e.target.querySelector('.population').innerHTML;
     name.innerHTML = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+    id.innerHTML = ("000" + pokemonId.toString()).slice (-3)
     image.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${("000" + pokemonId.toString()).slice (-3)}.png`;
     pokemon = getPokemon(pokemonId);
     console.log(pokemon);
@@ -86,17 +90,18 @@ function selectMatch(e){
     } else {
         type2.src = "";
     }
-    hp.innerHTML = hp.innerHTML.replace(': ', ': ' + pokemon[0].base["HP"].toString());
-    attack.innerHTML = attack.innerHTML.replace(': ', ': ' + pokemon[0].base["Attack"].toString());
-    defense.innerHTML = defense.innerHTML.replace(': ', ': ' + pokemon[0].base["Defense"].toString());
-    spAttack.innerHTML = spAttack.innerHTML.replace(': ', ': ' + pokemon[0].base["Sp. Attack"].toString());
-    spDefense.innerHTML = spDefense.innerHTML.replace(': ', ': ' + pokemon[0].base["Sp. Defense"].toString());
-    speed.innerHTML = speed.innerHTML.replace(': ', ': ' + pokemon[0].base["Speed"].toString());
+    hp.innerHTML = 'HP: ' + pokemon[0].base["HP"].toString();
+    attack.innerHTML = 'Attack: ' + pokemon[0].base["Attack"].toString();
+    defense.innerHTML = 'Defense: ' + pokemon[0].base["Defense"].toString();
+    spAttack.innerHTML = 'Sp. Attack: ' + pokemon[0].base["Sp. Attack"].toString();
+    spDefense.innerHTML = 'Sp. Defense: ' + pokemon[0].base["Sp. Defense"].toString();
+    speed.innerHTML = 'Speed: ' + pokemon[0].base["Speed"].toString();
 }
 
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 const name = document.querySelector('.entry-name');
+const id = document.querySelector('.entry-id');
 const image = document.querySelector('.entry-image');
 const entry = document.querySelector('.entry');
 const type1 = document.querySelector('.type1');

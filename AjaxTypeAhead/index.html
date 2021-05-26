@@ -63,7 +63,7 @@ function displayMatches(){
         const pokemonName = pokemon.name.english.replace(regex,`<span class="hl">${this.value}</span>`);
         return `
         <li>
-            <span class="name">${pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}</span>
+            <span class="name">${pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1).toLowerCase()}</span>
             <span class="population">${pokemon.id}</span>
         </li>
         `;

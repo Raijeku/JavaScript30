@@ -9,3 +9,4 @@ This repository stores plain JS solutions for each of the 30 days of the Javascr
 - [Flex Panels Image Gallery](./FlexPanelsImageGallery)
 - [Ajax Type Ahead](./AjaxTypeAhead)
 - [Array Cardio Day 2](./ArrayCardioDay2)
+- [Fun With HTML Canvas](./FunWithHTMLCanvas)

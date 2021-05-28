@@ -10,3 +10,4 @@ This repository stores plain JS solutions for each of the 30 days of the Javascr
 - [Ajax Type Ahead](./AjaxTypeAhead)
 - [Array Cardio Day 2](./ArrayCardioDay2)
 - [Fun With HTML Canvas](./FunWithHTMLCanvas)
+- [14 Must Know Dev Tools Tricks](./14MustKnowDevToolsTricks)
